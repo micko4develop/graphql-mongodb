@@ -13,6 +13,9 @@ import { Student } from './student.entity';
   providers: [
     StudentResolver,
     StudentService
+  ],
+  exports: [
+    StudentService
   ]
 })
 export class StudentModule {}

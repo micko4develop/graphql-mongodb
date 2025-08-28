@@ -25,4 +25,12 @@ export class LessonResolver {
     ) {
         return this.LessonService.createLesson(createLessonInput)
     }
+
+    @Mutation(returns => LessonType)
+    assignStudentsToLesson(
+        @Args('lessonId') lessonId: string,
+        @Args('studentIds', { type: () => [String] }) studentIds: string[]
+    ) {
+        return this.LessonService.assignStudentsToLesson(lessonId, studentIds)
+    }
 }
