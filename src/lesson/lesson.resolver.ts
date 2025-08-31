@@ -19,14 +19,14 @@ export class LessonResolver {
         return this.LessonService.getAllLessons()
     }
 
-    @Mutation(returns => LessonType)
+    @Mutation(() => LessonType)
     createLesson(
         @Args('createLessonInput') createLessonInput: CreateLessonInput 
     ) {
         return this.LessonService.createLesson(createLessonInput)
     }
 
-    @Mutation(returns => LessonType)
+    @Mutation(() => LessonType)
     assignStudentsToLesson(
         @Args('lessonId') lessonId: string,
         @Args('studentIds', { type: () => [String] }) studentIds: string[]
